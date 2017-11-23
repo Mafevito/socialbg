@@ -15,4 +15,8 @@
       <input type="password" matInput placeholder="Contraseña" formControlName="password" id="password">
   </mat-input-container>
   <button type="submit" mat-raised-button color="accent">Crear cuenta</button>
+  <p style="text-align:center">
+    ¿Ya tienes cuenta?
+    <a [routerLink]="['/signin']" mat-button color="primary">Iniciar sesión</a>
+  </p>
 </form>

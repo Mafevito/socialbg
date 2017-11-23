@@ -5,7 +5,11 @@ import icons from './icons';
 
 @Component({
   selector: 'app-question-form',
-  templateUrl: './question-form.component.html'
+  templateUrl: './question-form.component.html',
+  styles: [`
+    i { font-size: 46px;}
+    small { display: block }
+    `]
 })
 
 export class QuestionFormComponent {
@@ -24,11 +28,12 @@ export class QuestionFormComponent {
   onSubmit(form: NgForm) {
     const q = new Question(
       form.value.title,
-      form.value.description
+      form.value.description,
+      new Date(),
+      form.value.icon
     );
     console.log(q);
   }
-
 }
 
 // Recibimos las preguntas aquí

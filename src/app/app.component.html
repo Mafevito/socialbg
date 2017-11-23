@@ -1,11 +1,6 @@
 <mat-toolbar color="primary">
-  <span>socialbg</span>
+  <span [routerLink]="['/']">socialbg</span>
   <span class="space"></span>
-  <mat-icon>account_circle</mat-icon>
+  <mat-icon [routerLink]="['/signin']">account_circle</mat-icon>
 </mat-toolbar>
-
-<!-- <app-question></app-question> -->
-<!-- <app-signin></app-signin> -->
-<!-- <app-signup></app-signup> -->
-<!-- <app-question-list></app-question-list> -->
-<app-question-form></app-question-form>
+<router-outlet></router-outlet>

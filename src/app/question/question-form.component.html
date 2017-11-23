@@ -1,4 +1,4 @@
-<!-- <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
   <mat-input-container>
     <input matInput placeholder="Titulo" name="title" ngModel>
   </mat-input-container>
@@ -7,10 +7,22 @@
     <input matInput placeholder="Descripción" name="description" ngModel>
   </mat-input-container>
   <mat-grid-list cols="3" rowHeight="3:2">
-    <mat-grid-tile *ngForm="let icon of icons">
-      <i mat-list-icon class="devicon-{{icon.name}}-{{getIconVersion(icon)}}"></i>
+    <mat-grid-tile>
+      <mat-radio-group [ngModel] name="icon">
+        <mat-radio-button value="none">
+          <i mat-list-icon class="material-icons">help</i>
+          <small>Sin icono</small>
+        </mat-radio-button>
+      </mat-radio-group>
+    </mat-grid-tile>
+
+    <mat-grid-tile *ngFor="let icon of icons">
+      <mat-radio-group [ngModel] name="icon">
+        <mat-radio-button value="devicon-{{icon.name}}-{{getIconVersion(icon)}}">
+          <i mat-list-icon class="devicon-{{icon.name}}-{{getIconVersion(icon)}}"></i>
+        </mat-radio-button>
+      </mat-radio-group>
     </mat-grid-tile>
   </mat-grid-list>
   <button type="submit" mat-raised-button color="accent">Enviar</button>
-</form> -->
-ola
+</form>

@@ -16,6 +16,9 @@ import { SigninComponent } from './auth/signin.component';
 import { SignupComponent } from './auth/signup.component';
 import { QuestionListComponent} from './question/question-list.component';
 import { QuestionFormComponent } from './question/question-form.component';
+
+import { Routing } from './app.routing';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,8 @@ import { QuestionFormComponent } from './question/question-form.component';
     MaterialModule,
     MomentModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Routing,
   ],
   providers: [],
   bootstrap: [AppComponent]

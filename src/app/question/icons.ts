@@ -1,4 +1,4 @@
-export default[[
+export default[
   {
     'name': 'amazonwebservices',
     'tags': ['cloud', 'hosting', 'server'],
@@ -391,5 +391,4 @@ export default[[
       'font': ['plain', 'plain-wordmark']
     }
   }
-]
-]
+];

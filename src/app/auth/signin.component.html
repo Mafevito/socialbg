@@ -1,0 +1,18 @@
+<form [formGroup]="signinForm" (ngSubmit)="onSubmit()">  
+  <mat-input-container>
+      <input matInput placeholder="Correo Electrónico" formControlName="email" id="email">
+  </mat-input-container>
+
+  <mat-input-container>
+      <input type="password" matInput placeholder="Contraseña" formControlName="password" id="password">
+  </mat-input-container>
+  <button type="submit" mat-raised-button color="accent">Iniciar sesión</button>
+</form>
+
+
+
+
+
+<!--Vamos a usar reactiveForms para crear el formulario, es una
+manera más programable, para poder usarlo debemos indicarle el nombre para controlar,
+eso se hace con formControlName -->

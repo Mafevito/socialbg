@@ -19,12 +19,13 @@ const question = {
 
 const questions= new Array(10).fill(question)
 
-//cuando el front acceda a esa ruta de las preguntas(api/questions)
+//cuando el front acceda a esa ruta de las preguntas(api/questions)devolvermos el array de preguntas
 app.get('/', (req,res) => res.status(200).json(questions))
-//cuando acceca especificamente a una sola pregunta(api/question/id)
+//cuando acceda especificamente a una sola pregunta(api/question/id) muestra el detalle de una sola pregunta
 app.get('/:id', (req,res) => res.status(200).json(question))
 
 export default app
 
 
-//Podemos definir rutas y exportar
+// Podemos definir rutas y exportar
+// Esto es un endpoint

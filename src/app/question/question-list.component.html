@@ -1,3 +1,5 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<div *ngIf="!loading">
 <mat-list>
   <mat-list-item *ngFor="let question of questions" [routerLink]="['questions', question._id]">
     <i *ngIf="question.icon === 'none'" mat-list-icon class="material-icons help">help</i>
@@ -7,7 +9,7 @@
   </mat-list-item>
 </mat-list>
 <button mat-fab color="accent" class="add-question" [routerLink]="['questions/new']">+</button>
-
+</div>
 <!-- mat-list, es un componente de contenedor que ajusta una
  serie de artículos o datos en forma de lista.
  Como componente de la lista base, proporciona

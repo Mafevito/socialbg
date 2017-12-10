@@ -1,3 +1,5 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<div *ngIf="!loading">
 <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar>
@@ -20,13 +22,14 @@
   <ul class="answers-list" *ngIf="question.answers.length > 0">
 <!-- Por cada respuesta que tenga la pregunta asigname cada una de ellas, a la array answers -->
     <li *ngFor="let answer of question.answers">
-      <h5>{{answer.user.fullName()}} 
+      <h5>{{answer.user.fullName()}}
       <small>{{answer.createdAt | amLocale: 'es'| amTimeAgo}}</small></h5>
       <p class="description">{{answer.description}}</p>
     </li>
   </ul>
   <p *ngIf="question.answers.length === 0"> Se el primero en responder </p>
   <app-answer [question]="question" class="answer-form"></app-answer>
+</div>
 </div>
 
 

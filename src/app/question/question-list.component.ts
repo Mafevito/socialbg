@@ -1,13 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Question } from './question.model';
-
-
-const q = new Question(
-  '¿Comó funciona una variable?',
-  'Este es mi lo creo',
-  new Date(),
-  'none'
-);
+import { QuestionService } from './question.service';
 
 @Component({
   selector: 'app-question-list',
@@ -19,10 +12,22 @@ const q = new Question(
       right: 30px;
       font-size: 30px;
     }
-    `]
+    `],
+    providers:[QuestionService]
 })
 
-export class  QuestionListComponent {
-  questions: Question[] = new Array(10).fill(q);
+export class  QuestionListComponent implements OnInit {
+  constructor(private questionService: QuestionService){}
 
+  questions: Question[];
+  loading = true;
+
+  ngOnInit() {
+    this.questionService
+      .getQuestions()
+      .then((questions: Question[]) => {
+        this.questions = questions;
+        this.loading = false;
+      });
+  }
 }
